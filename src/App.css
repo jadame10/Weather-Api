@@ -14,25 +14,31 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
-
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chooseDate{
+  width: 33%;
+  margin: 0 auto;
+  height:40px;
+  font-size: 18px;
+}
+table td, thl{
+  font-size: 18px;
+  width: 100px;
+}
+label{
+  font-size: 18px;
+  width: 250px;
+}
+.btn0{
+  margin: 20px;
 }

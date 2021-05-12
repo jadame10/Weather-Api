@@ -1,0 +1,1 @@
+<input type = 'date' name = 'date0' className = 'chooseDate' onChange = {this.onChange} />

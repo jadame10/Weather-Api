@@ -1,0 +1,31 @@
+{ this.state.loc ?
+            this.state.events.intervals.filter((item) => item.startTime.split('T')[0] === this.state.message).map((item, i)=>(
+            <tr key = {i}>
+               <td>{item.startTime.split('T')[1].split('Z')}</td>
+             <td>
+             
+             {item.values.weatherCode === 1100 ?<SunCloud />
+              : item.values.weatherCode === 1000  ? <Sun />
+              : item.values.weatherCode === 1102  ? <Cloud />
+              : item.values.weatherCode === 1101  ? <Mostly />
+              : item.values.weatherCode === 1001  ? <Cloudy />
+              : item.values.weatherCode === 4000  ? <Drizzle />
+              : item.values.weatherCode === 4200  ? <LightRain />
+              : item.values.weatherCode === 4001  ? <Rain />
+              : item.values.weatherCode}
+            </td> 
+           
+            <td> {item.values.temperature}   C</td> 
+            <td>{item.values.windDirection > 337.5 || item.values.windDirection <=22.5 ? 'N'
+            : item.values.windDirection > 22.5 && item.values.windDirection <= 67.5 ? 'NE'
+            : item.values.windDirection > 67.5 && item.values.windDirection <= 135 ? 'E'
+            : item.values.windDirection > 135 && item.values.windDirection <= 157.5 ? 'SE'
+            : item.values.windDirection > 157.5 && item.values.windDirection <= 202.5 ? 'S'
+            : item.values.windDirection > 202.5 && item.values.windDirection <= 247.5 ? 'SW'
+            : item.values.windDirection > 247.5 && item.values.windDirection <= 292.5 ? "W"
+            : item.values.windDirection > 292.5 && item.values.windDirection <= 337.5 ? "NW"
+            : 'none'}
+          </td>
+          <td>{item.values.windSpeed} m/s</td>
+            </tr>
+            )): "none"}
