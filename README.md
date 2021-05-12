@@ -1,2 +1,2 @@
-# Weathr-Api
+# Weather-Api
 Weather Api written in React
